@@ -42,8 +42,8 @@ export default function PromotionForm({
     await mutateAsync({
       ...values,
       discount: Number(values.discount) || 0,
-      companyId: company.id,
-      companyTitle: company.title,
+      companyId: company?.id || '',
+      companyTitle: company?.title || '',
     });
     if (onSubmit) {
       onSubmit(values);
